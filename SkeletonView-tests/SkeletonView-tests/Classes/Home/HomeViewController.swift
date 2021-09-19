@@ -9,7 +9,7 @@ import UIKit
 import SkeletonView
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     @IBOutlet weak var newspaperNameLabel: UILabel!
     @IBOutlet weak var newsPaperLogoImage: UIImageView!
     @IBOutlet weak var ArticlesTableView: UITableView!
@@ -17,9 +17,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func loadData(_ sender: Any) {
         loadSampleData()
     }
-    
-    //MARK: - Variables
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +27,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupSkeleton()
     }
     
-   
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -41,10 +36,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    // Cell height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 161
+        return 220
     }
     
+    // Mark the components as Skeletonizable to be able to add the animation on them.
     func setupSkeleton(){
         self.newsPaperLogoImage.isSkeletonable = true
         self.newspaperNameLabel.isSkeletonable = true
@@ -52,23 +49,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadSampleData(){
         
+        // Show animation
         newspaperNameLabel.showAnimatedGradientSkeleton()
         newsPaperLogoImage.showAnimatedGradientSkeleton()
         
-       DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        // Add content to label and image
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.newspaperNameLabel.text = "Last hour notices"
             self.newsPaperLogoImage.image = UIImage(named: "newsHeader")
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+        // Hide animation after 3 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             self.newspaperNameLabel.hideSkeleton()
             self.newsPaperLogoImage.hideSkeleton()
         }
         
     }
-    
-   
-    
-    
     
 }
