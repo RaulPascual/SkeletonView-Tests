@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SkeletonView_tests" customModuleProvider="target">
             <connections>
+                <outlet property="ArticlesTableView" destination="LEF-HK-veJ" id="nwJ-Jz-PFA"/>
+                <outlet property="loadDataButton" destination="b9f-db-WdM" id="Yzb-nh-6FN"/>
+                <outlet property="newsPaperLogoImage" destination="Vh5-5V-LIE" id="HSk-sz-QW0"/>
+                <outlet property="newspaperNameLabel" destination="LM1-eX-7Fo" id="FUn-ww-bn2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +23,65 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQw-it-D7c">
-                    <rect key="frame" x="96" y="265" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9f-db-WdM">
+                    <rect key="frame" x="20" y="832" width="374" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Load example data">
+                        <color key="titleColor" name="AccentColor"/>
+                    </state>
+                    <connections>
+                        <action selector="loadData:" destination="-1" eventType="touchUpInside" id="My8-hP-sgM"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LEF-HK-veJ">
+                    <rect key="frame" x="20" y="249" width="374" height="553"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newspaper name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM1-eX-7Fo">
+                    <rect key="frame" x="20" y="44" width="374" height="42"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vh5-5V-LIE">
+                    <rect key="frame" x="20" y="110" width="374" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="xjI-T4-sDl"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="96" y="99"/>
+            <constraints>
+                <constraint firstItem="LEF-HK-veJ" firstAttribute="top" secondItem="Vh5-5V-LIE" secondAttribute="bottom" constant="11" id="0Ls-fz-QwQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b9f-db-WdM" secondAttribute="trailing" constant="20" id="2Xd-hW-biN"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2Yl-di-sMF"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="top" secondItem="LEF-HK-veJ" secondAttribute="bottom" constant="30" id="2qi-uK-6jn"/>
+                <constraint firstItem="LEF-HK-veJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5sF-yO-9pY"/>
+                <constraint firstItem="Vh5-5V-LIE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="65o-Ii-qOW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LEF-HK-veJ" secondAttribute="trailing" constant="20" id="6iq-3d-mFR"/>
+                <constraint firstItem="LM1-eX-7Fo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C7f-Hq-xi3"/>
+                <constraint firstItem="LEF-HK-veJ" firstAttribute="top" secondItem="Vh5-5V-LIE" secondAttribute="bottom" constant="11" id="CsK-10-swk"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Fc9-az-EL7"/>
+                <constraint firstItem="Vh5-5V-LIE" firstAttribute="top" secondItem="LM1-eX-7Fo" secondAttribute="bottom" constant="24" id="HNs-m4-2Vl"/>
+                <constraint firstItem="Vh5-5V-LIE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KEf-au-Q4m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b9f-db-WdM" secondAttribute="trailing" constant="20" id="PS1-Nj-rQa"/>
+                <constraint firstItem="Vh5-5V-LIE" firstAttribute="leading" secondItem="LEF-HK-veJ" secondAttribute="leading" id="Rao-yX-LiV"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="top" secondItem="LEF-HK-veJ" secondAttribute="bottom" constant="30" id="TD6-1F-O4x"/>
+                <constraint firstItem="Vh5-5V-LIE" firstAttribute="trailing" secondItem="LEF-HK-veJ" secondAttribute="trailing" id="Yzg-qK-Lcq"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bck-7F-5uN"/>
+                <constraint firstItem="b9f-db-WdM" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="eDP-G1-ULW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vh5-5V-LIE" secondAttribute="trailing" constant="20" id="nfN-6T-ksp"/>
+                <constraint firstItem="LM1-eX-7Fo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="stv-dH-EUu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LM1-eX-7Fo" secondAttribute="trailing" constant="20" id="zos-Cc-UFo"/>
+            </constraints>
+            <point key="canvasLocation" x="95.652173913043484" y="98.4375"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

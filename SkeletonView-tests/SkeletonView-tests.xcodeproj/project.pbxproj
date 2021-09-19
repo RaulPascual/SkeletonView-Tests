@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E97C835F26F690A00047919E /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E97C835E26F690A00047919E /* SkeletonView */; };
+		E9D7B8E826F69ED400F16AF6 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7B8E626F69ED400F16AF6 /* ArticleTableViewCell.swift */; };
+		E9D7B8E926F69ED400F16AF6 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D7B8E726F69ED400F16AF6 /* ArticleTableViewCell.xib */; };
 		E9E4CBBE26F540F0008C32F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4CBBD26F540F0008C32F0 /* AppDelegate.swift */; };
 		E9E4CBC726F540F2008C32F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E4CBC626F540F2008C32F0 /* Assets.xcassets */; };
 		E9E4CBCA26F540F2008C32F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E4CBC826F540F2008C32F0 /* LaunchScreen.storyboard */; };
@@ -15,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9D7B8E626F69ED400F16AF6 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		E9D7B8E726F69ED400F16AF6 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		E9E4CBBA26F540F0008C32F0 /* SkeletonView-tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkeletonView-tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E4CBBD26F540F0008C32F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E4CBC626F540F2008C32F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,12 +34,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97C835F26F690A00047919E /* SkeletonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9D7B8E526F69EBB00F16AF6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E9D7B8E626F69ED400F16AF6 /* ArticleTableViewCell.swift */,
+				E9D7B8E726F69ED400F16AF6 /* ArticleTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E9E4CBB126F540F0008C32F0 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +97,7 @@
 		E9E4CBD326F54420008C32F0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E9D7B8E526F69EBB00F16AF6 /* Cell */,
 				E9E4CBD426F544AD008C32F0 /* HomeViewController.swift */,
 				E9E4CBD526F544AD008C32F0 /* HomeViewController.xib */,
 			);
@@ -104,6 +120,9 @@
 			dependencies = (
 			);
 			name = "SkeletonView-tests";
+			packageProductDependencies = (
+				E97C835E26F690A00047919E /* SkeletonView */,
+			);
 			productName = "SkeletonView-tests";
 			productReference = E9E4CBBA26F540F0008C32F0 /* SkeletonView-tests.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +150,9 @@
 				Base,
 			);
 			mainGroup = E9E4CBB126F540F0008C32F0;
+			packageReferences = (
+				E97C835D26F690A00047919E /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = E9E4CBBB26F540F0008C32F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D7B8E926F69ED400F16AF6 /* ArticleTableViewCell.xib in Resources */,
 				E9E4CBCA26F540F2008C32F0 /* LaunchScreen.storyboard in Resources */,
 				E9E4CBC726F540F2008C32F0 /* Assets.xcassets in Resources */,
 				E9E4CBD726F544AD008C32F0 /* HomeViewController.xib in Resources */,
@@ -159,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E4CBBE26F540F0008C32F0 /* AppDelegate.swift in Sources */,
+				E9D7B8E826F69ED400F16AF6 /* ArticleTableViewCell.swift in Sources */,
 				E9E4CBD626F544AD008C32F0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E97C835D26F690A00047919E /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.25.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E97C835E26F690A00047919E /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E97C835D26F690A00047919E /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9E4CBB226F540F0008C32F0 /* Project object */;
 }
